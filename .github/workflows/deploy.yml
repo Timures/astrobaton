@@ -24,6 +24,9 @@ jobs:
 
       - name: Build project
         run: npm run build # Генерирует папку dist
+        env:
+          VITE_AI_API_KEY: ${{ secrets.VITE_AI_API_KEY }}
+          VITE_AI_URL: ${{ secrets.VITE_AI_URL }}
 
       - name: Deploy to Server via SCP
         uses: appleboy/scp-action@v0.1.7
